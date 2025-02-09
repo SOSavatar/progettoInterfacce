@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib
+import re
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from gensim.models import Word2Vec
@@ -11,6 +12,10 @@ import nltk
 from nltk.tokenize import word_tokenize
 import io       #viene utilizzato per il grafico 
 import base64   #viene utilizzato per il grafico 
+
+from nltk.corpus import stopwords
+
+nltk.download('stopwords')
 
 
 # scarico i tokenizer di nltk
@@ -42,6 +47,29 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 
 def prediciGenere(content):
+
+    #PULIZIA CONTENT 
+    #######################################################################################################
+    
+    stop_words = set(stopwords.words('english'))
+    #qui ho creato un set(stop_words) con tutte le parole inglesi più utilizzate(articoli,preposizioni etc...). Mi servirà in seguito 
+    #per pulire i testi 
+
+    def clean_summary(text):
+        # Rimuovi punteggiatura e caratteri speciali
+        text = re.sub(r'\W', ' ', text) #\W include qualsiasi tipo di carettere speciale 
+        # Converti in minuscolo
+        text = text.lower()
+        # Rimuovi stopwords
+        text = ' '.join([word for word in text.split() if word not in stop_words])
+        #qui vengono eliminate tutte le stop_words
+        return text
+    
+    content = clean_summary(content)
+    #######################################################################################################
+
+
+
 
      # PARTIZIONE DELLA TRAMA 
     #######################################################################################################
