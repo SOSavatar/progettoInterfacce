@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/*
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+  */
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: #251d3a;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* container non serve*/
+.container {
+  text-align: center;
+  width: 100%; /* Aumenta la larghezza */
+  max-width: 700px; /* Ingrandisce il massimo */
+  display: flex;
+  flex-direction: column; /* Centra meglio gli elementi */
+  gap: 30px; /* Aggiungi uno spazio tra gli elementi */
+}
+
+.title {
+  font-size: 2.5rem; /* Aumenta la dimensione del titolo */
+  margin-bottom: 30px; /* Maggiore distanza dal resto */
+}
+
+.upload-box {
+  background: #e04d01;
+  padding: 35px; /* Aumenta il padding */
+  border-radius: 15px; /* Bordo leggermente più arrotondato */
+  box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.1); /* Aumenta l'ombra */
+}
+
+.file-input {
+  margin-bottom: 15px; /* Maggiore spazio tra i file input */
+  
+}
+
+.analyze-button {
+  background-color: #2a2550;
+  color: white;
+  padding: 15px 30px; /* Aumenta il padding del bottone */
+  border: none;
+  border-radius: 8px; /* Angoli più arrotondati */
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.2rem; /* Aumenta la dimensione del testo */
+}
+
+.analyze-button:hover {
+  background-color: #493d92;
+}
+
+.graph-image {
+  width: 75%;  /* Imposta la larghezza al 50% */
+  height: auto;  /* Mantiene l'aspetto proporzionale */
+}
